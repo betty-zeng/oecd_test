@@ -27,7 +27,7 @@ const config = {
    */
   description:
     'This map shows the average PM 2.5 level of all urban areas when loaded for the first time, and changes to the trend for a specific city when you click on that city on the map. \
-    Select a city to visualize historical data.',
+    Each city is representy by a circle labeled by its population density. Select a city to visualize historical data.',
   /**
    * Data fields to chart from the source data
    */
@@ -85,15 +85,15 @@ const config = {
   /**
    * (Experimental) Try to build a legend automatically from the studio style,
    *  only works with a basic [interpolate] expression ramp with stops */
-  autoLegend: true,
+  autoLegend: false,
   /** The number of decimal places to use when rounding values for the legend, defaults to 1 */
   autoLegendDecimals: 1,
 
   /**
    * Legend colors and values, ignored if autoLegend is used. Delete both if no legend is needed.
    */
-  legendColors: ['#ffeda0', '#fed976', '#feb24c', '#fd8d3c', '#fc4e2a', 'e31a1c'],
-  legendValues: [0, 20, 40, 60, 80, 100],
+  legendColors: ['#ffeda0', '#fed976', '#feb24c', '#fd8d3c', '#fc4e2a', '#e31a1c', '#bd0026'],
+  legendValues: ['10K', '100K', '500K', '1M', '5M', '10M', '25M'],
   /**
    * The name of your choropleth map layer in studio, used for building a legend
    */

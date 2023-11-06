@@ -41,11 +41,11 @@ const config = {
   /**
    * Labels for the X Axis, one for each field
    */
-  labels: ['1998', '1999', '2000', '2001','2002',
-    '2003','2004','2005','2006','2007',
-    '2008','2009','2010','2011','2012',
-    '2013','2014','2015','2016','2017',
-    '2018','2019','2020'],
+  labels: ['98', '99', '00', '01','02',
+    '03','04','05','06','07',
+    '08','09','10','11','12',
+    '13','14','15','16','17',
+    '18','19','20'],
   /**
    * The name of the data field to pull the place name from for chart labeling ("Total Votes in placeNameField, placeAdminField")
    */
@@ -62,16 +62,16 @@ const config = {
   /**
    * Label for the graph line
    */
-  dataSeriesLabel: 'Annual Average Ground-level of Fine Particulate Matter (PM 2.5)',
+  dataSeriesLabel: 'Average PM 2.5 level',
   /**
    * Basic implementation of zooming to a clicked feature
    */
-  zoomToFeature: true,
+  zoomToFeature: false,
   /**
    * Color to highlight features on map on click
    * TODO: add parameter for fill color too?
    */
-  highlightColor: '#fff',
+  highlightColor: '#BD0026',
   /**
    * (_Optional_) Set this to 'bar' for a bar chart, default is line
    */
@@ -92,8 +92,8 @@ const config = {
   /**
    * Legend colors and values, ignored if autoLegend is used. Delete both if no legend is needed.
    */
-  legendColors: ['#c200c2', '#a200a3', '#810184', '#600165', '#400246'],
-  legendValues: [13.779, 33.44, 40.88, 46.99, 53.86],
+  legendColors: ['#ffeda0', '#fed976', '#feb24c', '#fd8d3c', '#fc4e2a', 'e31a1c'],
+  legendValues: [0, 20, 40, 60, 80, 100],
   /**
    * The name of your choropleth map layer in studio, used for building a legend
    */
@@ -210,7 +210,7 @@ function onMapClick(e) {
     if (config.zoomToFeature) {
       const bb = turf.bbox(clickedFeature.geometry);
       map.fitBounds(bb, {
-        padding: 150,
+        padding: 500,
       });
     }
     highlightFeature(clickedFeature.id);
